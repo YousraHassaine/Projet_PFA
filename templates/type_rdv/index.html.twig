@@ -1,0 +1,6 @@
+<select name="typeRdv" class="form-select">
+    {% for typeRdv in typeRdvs %}
+        <option value='{{ typeRdv.id  }}'> {{ typeRdv.libelle}} </option>
+    {% endfor %}
+</select>
+

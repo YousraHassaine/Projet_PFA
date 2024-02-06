@@ -1,0 +1,65 @@
+{% extends 'TemplateAdmin/layout.html.twig' %}
+
+{% block title %}RDV{% endblock %}
+
+{% block body %}
+
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row mb-2">
+                        <div class="col-sm-4">
+                        </div>
+
+                    </div>
+
+                    <div class="table-responsive">
+                        <a href="{{ path('home.index') }}" class="btn btn-primary"> Liste de Medecins</a>
+                        <table class="table align-middle table-nowrap table-check">
+                            <thead class="table-light">
+                            <tr>
+
+                                <th class="align-middle">Patient</th>
+                                <th class="align-middle">Doctor</th>
+                                <th class="align-middle">Date RENDEZ-VOUS</th>
+                                <th class="align-middle">Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            {% for appointment in appointments %}
+                                <tr>
+
+        
+                                    <td>{{ appointment.patient.nom }}
+
+                                    </td>
+                                    <td>
+                                        <img class="rounded-circle header-profile-user  h-25" src="{{asset('assets/img/'~appointment.Doctor.photp)}}" alt="">    {{ appointment.doctor.nom }}
+                                    </td>
+                                    <td>
+                                        {{ appointment.createdAt|date('Y-m-d\\TH:i')  }}
+                                    </td>
+                                    <td>
+                                        <div class="d-flex gap-3">
+                                            <a href="{{ path('rdvupdate', {'id': appointment.id}) }}" class="text-success"><i class="mdi mdi-pencil font-size-18"></i></a>
+                                            <a href="{{ path('rdvDelete', {'id': appointment.id}) }}" class="text-danger"><i class="mdi mdi-delete font-size-18"></i></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+
+                            </tbody>
+                        </table>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

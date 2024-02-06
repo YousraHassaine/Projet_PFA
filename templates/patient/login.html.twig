@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Login{% endblock %}
+
+{% block body %}
+
+    <div class="breadcrumb-area shadow dark bg-fixed text-light" style="background-image: url(../assets/img/4.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1>My Doctor</h1>
+                    <h2>Le logiciel médical qui simplifie votre quotidien</h2>
+                    <h5> Vos consultations sont optimisées grâce des outils innovants, qui s'adaptent à votre exercice.</h5s>
+                </div>
+                <div class="col-md-6 appoinment">
+                    <div class="appoinment-box">
+                        <div class="heading">
+                            <h4>Vous avez deja un compte ? </h4>
+                            <h2>Un de nos experts vous recontacte</h2>
+                        </div>
+                        <form method="post" action="{{ path('loginPatientPost') }}">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Identifiant<i class="text-danger">*</i></label>
+                                        <input class="form-control" id="f-name" name="login" placeholder="Identifiant" type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Mot de passe<i class="text-danger">*</i></label>
+                                        <input class="form-control" id="l-lname" name="password" placeholder="Mot de passe" type="password">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <button type="submit" name="submit" id="submit">
+                                        Se connecter  <i class="fa fa-paper-plane"></i>
+                                    </button>
+                                </div>
+
+                                <div class="col-md-6">
+                                    {# <button type="inscription" name="inscription" id="subscribe">
+                                inscrivez-vous  <i class="fa fa-paper-plane"></i>
+
+                                    </button>  #}
+                                    <div style="margin-top: 25px;">
+                                        <a class="register-button" href="{{ path('registerPatientForm') }}" > s'inscrire</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

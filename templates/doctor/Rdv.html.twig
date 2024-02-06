@@ -1,0 +1,57 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Rdv{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js">
+{% endblock %}
+
+
+{% block body %}
+
+<div>
+    <canvas id="appointmentsChart"></canvas>
+</div>
+
+{% block javascripts %}
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+            var results = {{ results | json_encode() }};
+
+            var labels = results.map(function(result) {
+            return result.mois;
+        });
+
+            var data = results.map(function(result) {
+            return result.totalRdv;
+        });
+
+            var ctx = document.getElementById('appointmentsChart').getContext('2d');
+            var chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+            labels: labels,
+            datasets: [{
+            label: 'Nombre de rendez-vous',
+            data: data,
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderWidth: 1
+        }]
+        },
+            options: {
+            scales: {
+            y: {
+            beginAtZero: true,
+            precision: 0
+        }
+        }
+        }
+        });
+        });
+    </script>
+
+    </script>
+{% endblock %}

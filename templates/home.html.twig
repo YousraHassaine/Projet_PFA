@@ -1,0 +1,433 @@
+{% extends "base.html.twig" %}
+{% block title %} Welcome to MyDoctor
+{% endblock %}
+{% block body %}
+
+
+
+
+<div class="banner-area responsive-auto-height text-small">
+    <div class="item shadow dark text-light bg-fixed" style="background-image: url(assets/img/4.jpg);">
+
+        <div class="box-table">
+            <div class="box-cell">
+                <div class="container">
+                    <div class="row">
+                        <div class="content double-items">
+
+                            <div class="col-md-7 col-sm-6">
+                                <h1 data-animation="animated slideInRight">Best care for your <span> Good health</span>
+                                </h1>
+                                <p data-animation="animated slideInUp">
+                                    The ourselves suffering the sincerity. Inhabit her manners adapted age certain.
+                                    Debating offended at branched striking be subjects.
+                                </p>
+                                <a data-animation="animated slideInUp" class="btn btn-light border btn-md" href="#">View
+                                    Details</a>
+                            </div>
+
+                            <!-- Start Appoinment Form -->
+                            <div class="col-md-5 col-sm-6 appoinment">
+                                <div class="appoinment-box">
+                                    <div class="heading">
+                                        <h2>Recherche</h2>
+                                    </div>
+                                    <form action="{{ path('home.recherche') }}" method="post">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <input class="form-control" id="name" name="name" placeholder="Name"
+                                                        type="text">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <select name="ville">
+                                                        <option value="Oujda">Oujda</option>
+                                                        <option value="Berkane">Berkane</option>
+                                                        <option value="Nador">Nador</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                {{ render(controller('App\\Controller\\DoctorController::getDoctorsSpecialities')) }}
+                                                    <!--select name="spécialité">
+
+                                                        <!option value="Allergologie">Allergologie</option>
+                                                        <option value="Cardiologie">Cardiologie</option>
+                                                        <option value="Dermatologie">Dermatologie</option>
+                                                        <option value="Endocrinologie">Endocrinologie</option>
+                                                        <option value="6">Gastro</option>
+                                                        <option value="7">Gynécologie</option>
+                                                        <option value="8">Hématologie</option>
+                                                        <option value="9">Néphrologie</option>
+                                                        <option value="10">Neurologie</option>
+                                                        <option value="11">Ophtalmologie</option>
+                                                        <option value="12">ORL</option>
+                                                        <option value="13">Médecine interne</option>
+                                                        <option value="14">Pédiatrie</option>
+                                                        <option value="15">Pneumologie</option>
+                                                        <option value="16">Psychiatrie</option>
+                                                        <option value="17">Radiologie</option>
+                                                        <option value="18">Rhumatologie</option>
+                                                        <option value="19">Urologie</option>
+
+
+
+                                                    </select>-->
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <button type="submit" name="submit" id="submit">
+                                                    Rechercher <i class="fa fa-paper-plane"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- End Appoinment Form -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="fun-fact-area default-padding shadow light text-center bg-fixed text-light"
+    style="background-image: url(assets/img/2440x1578.png);">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-6 item">
+                <div class="fun-fact">
+                    <i class="flaticon-recovered"></i>
+                    <div class="timer" data-to="230" data-speed="5000"></div>
+                    <span class="medium">Satisfied Patients</span>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 item">
+                <div class="fun-fact">
+                    <i class="flaticon-doctor"></i>
+                    <div class="timer" data-to="89" data-speed="5000"></div>
+                    <span class="medium">Regular Doctors</span>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 item">
+                <div class="fun-fact">
+                    <i class="flaticon-department"></i>
+                    <div class="timer" data-to="50" data-speed="5000"></div>
+                    <span class="medium">Departments</span>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 item">
+                <div class="fun-fact">
+                    <i class="flaticon-nurse"></i>
+                    <div class="timer" data-to="2348" data-speed="5000"></div>
+                    <span class="medium">Servant</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Start Why Chose Us 
+    ============================================= -->
+<div class="chose-us-area item-half">
+    <div class="container-full">
+        <div class="row">
+            <div class="col-md-6 thumb bg-cover" style="background-image: url(assets/img/WHY_CHOSE_US.jpg);"></div>
+            <div class="col-md-6 info">
+                <div class="heading">
+                    <h2>Why Chose us</h2>
+                    <p>
+                        Offering confined entrance no. Nay rapturous him see something residence. Highly talked do so
+                        vulgar. Her use behaved spirits and natural attempt say feeling. Exquisite mr incommode
+                        immediate he something ourselves it of. Law conduct yet chiefly beloved examine village proceed
+                    </p>
+                </div>
+                <ul>
+                    <li>
+                        <div class="info">
+                            <h4>Qualified facilities</h4>
+                            <p>
+                                Consider may dwelling old him her surprise finished families graceful. Gave led past
+                                poor met fine was new.
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="info">
+                            <h4>Top Level Doctors</h4>
+                            <p>
+                                Consider may dwelling old him her surprise finished families graceful. Gave led past
+                                poor met fine was new.
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="info">
+                            <h4>Dedicated patient care</h4>
+                            <p>
+                                Consider may dwelling old him her surprise finished families graceful. Gave led past
+                                poor met fine was new.
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="info">
+                            <h4>24/7 Emergency</h4>
+                            <p>
+                                Consider may dwelling old him her surprise finished families graceful. Gave led past
+                                poor met fine was new.
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Start Doctors Tips 
+    ============================================= -->
+<div class="doctor-tips-area default-padding bg-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="site-heading text-center">
+                    <h2>Health <span>Tips</span></h2>
+                    <p>
+                        While mirth large of on front. Ye he greater related adapted proceed entered an. Through it
+                        examine express promise no. Past add size game cold girl off how old
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="health-tips-items tips-carousel owl-carousel owl-theme">
+                <!-- Single Item -->
+                <div class="single-item">
+                    <div class="col-md-5">
+                        <div class="thumb">
+                            <img src="{{ asset('assets/img/CONSEILSSANTÉ1.jpg') }}" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="info">
+                            <div class="doctor">
+                                <h4>Dr. Jessica Ronal</h4>
+                                <h5>MPH, Medicine, Surgery</h5>
+                            </div>
+                            <h3>How to live a healthy lifestyle?</h3>
+                            <p>
+                                Frequently partiality possession resolution at or appearance unaffected he me. Engaged
+                                its was evident pleased husband. Ye goodness felicity do disposal dwelling no. First am
+                                plate jokes to began of cause an scale. Subjects he prospect elegance followed no
+                                overcame possible it on.
+                            </p>
+                            <h4>Follow the instructions</h4>
+                            <ul>
+                                <li>Dont just worry about the things you cannot help.</li>
+                                <li>Eat Healthy, work better, do gardening.</li>
+                                <li>Some relationships can kill you. Avoid them at the most.</li>
+                                <li>Focus on the good things that you like</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Single Item -->
+                <!-- Single Item -->
+                <div class="single-item">
+                    <div class="col-md-5">
+                        <div class="thumb">
+                            <img src="{{ asset('assets/img/CONSEILSSANTÉ2.jpg') }}" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="info">
+                            <div class="doctor">
+                                <h4>Dr. Jessica Ronal</h4>
+                                <h5>MPH, Medicine, Surgery</h5>
+                            </div>
+                            <h3>How to live a healthy lifestyle?</h3>
+                            <p>
+                                Frequently partiality possession resolution at or appearance unaffected he me. Engaged
+                                its was evident pleased husband. Ye goodness felicity do disposal dwelling no. First am
+                                plate jokes to began of cause an scale. Subjects he prospect elegance followed no
+                                overcame possible it on.
+                            </p>
+                            <h4>Follow the instructions</h4>
+                            <ul>
+                                <li>Dont just worry about the things you cannot help.</li>
+                                <li>Eat Healthy, work better, do gardening.</li>
+                                <li>Some relationships can kill you. Avoid them at the most.</li>
+                                <li>Focus on the good things that you like</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Single Item -->
+                <!-- Single Item -->
+                <div class="single-item">
+                    <div class="col-md-5">
+                        <div class="thumb">
+                            <img src="{{ asset('assets/img/CONSEILSSANTÉ3.jpg') }}" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="info">
+                            <div class="doctor">
+                                <h4>Dr. Jessica Ronal</h4>
+                                <h5>MPH, Medicine, Surgery</h5>
+                            </div>
+                            <h3>How to live a healthy lifestyle?</h3>
+                            <p>
+                                Frequently partiality possession resolution at or appearance unaffected he me. Engaged
+                                its was evident pleased husband. Ye goodness felicity do disposal dwelling no. First am
+                                plate jokes to began of cause an scale. Subjects he prospect elegance followed no
+                                overcame possible it on.
+                            </p>
+                            <h4>Follow the instructions</h4>
+                            <ul>
+                                <li>Dont just worry about the things you cannot help.</li>
+                                <li>Eat Healthy, work better, do gardening.</li>
+                                <li>Some relationships can kill you. Avoid them at the most.</li>
+                                <li>Focus on the good things that you like</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Single Item -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Start Footer 
+    ============================================= -->
+<footer>
+    <div class="container">
+        <div class="row">
+
+            <div class="f-items default-padding">
+
+                <!-- Single Item -->
+                <div class="col-md-4 item">
+                    <div class="f-item">
+                        <h4>About</h4>
+                        <p>
+                            Excellence decisively nay man yet impression for contrasted remarkably. There spoke happy
+                            for you are out. Fertile how old address.
+                        </p>
+                        <h2><i class="fas fa-phone"></i> +123 456 7890</h2>
+                        <div class="opening-info">
+                            <h5>Opening Hours</h5>
+                            <ul>
+                                <li> <span> Mon - Tues : </span>
+                                    <div class="pull-right"> 6.00 am - 10.00 pm </div>
+                                </li>
+                                <li> <span> Wednes - Thurs :</span>
+                                    <div class="pull-right"> 8.00 am - 6.00 pm </div>
+                                </li>
+                                <li> <span> Sun : </span>
+                                    <div class="pull-right closed"> Closed </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Single Item -->
+                <!-- Single Item -->
+                <div class="col-md-4 item">
+                    <div class="f-item link">
+                        <h4>Our Depeartment</h4>
+                        <ul>
+                            <li>
+                                <a href="#"><i class="fas fa-arrow-right"></i> Medecine and Health</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fas fa-arrow-right"></i> Dental Care and Surgery</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fas fa-arrow-right"></i> Eye Treatment</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fas fa-arrow-right"></i> Children Chare</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fas fa-arrow-right"></i> Traumatology</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fas fa-arrow-right"></i> X-ray</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- End Single Item -->
+                <!-- Single Item -->
+                <div class="col-md-4 item">
+                    <div class="f-item twitter-widget">
+                        <h4>Latest tweets</h4>
+                        <div class="twitter-item">
+                            <div class="twitter-content">
+                                <p>
+                                    <a href="#">@Becare</a> Looking for an awesome CREATIVE WordPress Theme? Find it
+                                    here: <a target="_blank" href="http://t.co/0WWEMQEQ48">http://t.co/0WWEMQEQ48</a>
+                                </p>
+                            </div>
+                            <div class="twitter-context">
+                                <i class="fab fa-twitter"></i><span class="twitter-date"> 01 day ago</span>
+                            </div>
+                        </div>
+                        <div class="twitter-item">
+                            <div class="twitter-content">
+                                <p>
+                                    <a href="#">@Jisham</a> It is a long established fact that a reader will be
+                                    distracted by the readable . Find it here: <a target="_blank"
+                                        href="http://t.co/0WWEMQEQ48">http://t.co/0WWEMQEQ48</a>
+                                </p>
+                            </div>
+                            <div class="twitter-context">
+                                <i class="fab fa-twitter"></i><span class="twitter-date"> 02 days ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Single Item -->
+            </div>
+        </div>
+    </div>
+    <!-- Start Footer Bottom -->
+    <div class="footer-bottom bg-dark text-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; Copyright 2019. All Rights Reserved by <a href="#">validthemes</a></p>
+                </div>
+                <div class="col-md-6 text-right link">
+                    <ul>
+                        <li>
+                            <a href="#">Terms of user</a>
+                        </li>
+                        <li>
+                            <a href="#">License</a>
+                        </li>
+                        <li>
+                            <a href="#">Support</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Footer Bottom -->
+</footer>
+<!-- End Footer -->
+
+
+
+
+{% endblock %}

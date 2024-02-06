@@ -1,0 +1,10 @@
+<div class="container">
+<div class="row">
+{% for subscription in subscriptions %}
+    <div class="col-md-4 border-primary" > 
+    <p>{{subscription.name}}</p>
+    <input type="radio" name="subscription" value="{{ subscription.id  }}" >
+    </div>
+{% endfor %}
+</div>
+</div>

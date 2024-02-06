@@ -1,0 +1,216 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Login{% endblock %}
+
+{% block body %}
+
+    <div class="breadcrumb-area shadow dark bg-fixed text-light" style="background-image: url(../assets/img/4.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                <h1>My Doctor</h1>
+                    <h2>Le logiciel médical qui simplifie votre quotidien</h2>
+                   <h5> Vos consultations sont optimisées grâce des outils innovants, qui s'adaptent à votre exercice.</h5>
+                </div>
+                <div class="col-md-6 appoinment">
+                    <div class="appoinment-box">
+                        <div class="heading">
+                            <h4>Vous êtes médecin ? </h4>
+                            <h2>Un de nos experts vous recontacte</h2>
+                        </div>
+                        <form action="{{ path('loginDoctorPost') }}" method="POST">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                    <label>Idetifiant<i class="text-danger">*</i></label>
+                                        <input class="form-control" id="f-name" name="login" placeholder="Identifiant" type="text">
+                                    </div>
+                                    <div class="form-group">
+                                    <label>Mot de passe<i class="text-danger">*</i></label>
+                                        <input class="form-control" id="l-lname" name="password" placeholder="Mot de passe" type="password">
+                                    </div>
+                                </div>
+                            </div>   
+                                
+                            <div class="row">
+                               <div class="col-md-6">
+                                    <button type="submit" name="submit" id="submit">
+
+                                    Se connecter  <i class="fa fa-paper-plane"></i>
+                               
+                                    </button>
+                                </div>
+                            
+                                <div class="col-md-6">
+                                    {# <button type="inscription" name="inscription" id="subscribe">
+                                inscrivez-vous  <i class="fa fa-paper-plane"></i>
+                                
+                                    </button> 
+                                    
+                                   
+                                    
+                                     #}
+                               <div style="margin-top: 25px;">
+                                <a class="register-button" href="{{ path('registerDoctorForm') }}" > s'inscrire</a>
+                                </div>
+                                </div>
+                            </div>
+                    
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <!-- Start Why Chose Us 
+    ============================================= -->
+    <div class="chose-us-area default-padding item-half">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 info">
+                    <div class="heading">
+                        <h2>Why Choose us</h2>
+                        <p>
+                            Offering confined entrance no. Nay rapturous him see something residence. Highly talked do so vulgar. Her use behaved spirits and natural attempt say feeling. Exquisite mr incommode immediate he something ourselves it of. Law conduct yet chiefly beloved examine village proceed
+                        </p>
+                    </div>
+                    <ul>
+                        <li>
+                            <div class="info">
+                                <h4>Qualified facilities</h4>
+                                <p>
+                                    Consider may dwelling old him her surprise finished families graceful. Gave led past poor met fine was new. 
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="info">
+                                <h4>Top Level Doctors</h4>
+                                <p>
+                                    Consider may dwelling old him her surprise finished families graceful. Gave led past poor met fine was new. 
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="info">
+                                <h4>Dedicated patient care</h4>
+                                <p>
+                                    Consider may dwelling old him her surprise finished families graceful. Gave led past poor met fine was new. 
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="info">
+                                <h4>24/7 Emergency</h4>
+                                <p>
+                                    Consider may dwelling old him her surprise finished families graceful. Gave led past poor met fine was new. 
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Start Faq -->
+                <div class="col-md-6 faq-area">
+                    <div class="heading">
+                        <h2>Answer & Questions</h2>
+                    </div>
+                    <div class="acd-items acd-arrow">
+                        <div class="panel-group symb" id="accordion">
+
+                            <!-- Single Item -->
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#ac1">
+                                            Do I need a business plan?
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="ac1" class="panel-collapse collapse in">
+                                    <div class="panel-body">
+                                        <p>
+                                            Removing welcomed civility or hastened is. Justice elderly but perhaps expense six her are another passage. Full her ten open fond walk not down.For request general express unknown are.
+                                        </p>
+                                        <p>
+                                             He in just mr door body held john down he. So journey greatly or garrets. Draw door kept do so come on open mean. Estimating stimulated how reasonably precaution diminution she simplicity sir but.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Single Item -->
+
+                            <!-- Single Item -->
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#ac2">
+                                            How long should a business plan be? 
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="ac2" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <p>
+                                            Removing welcomed civility or hastened is. Justice elderly but perhaps expense six her are another passage. Full her ten open fond walk not down.For request general express unknown are.
+                                        </p>
+                                        <p>
+                                             He in just mr door body held john down he. So journey greatly or garrets. Draw door kept do so come on open mean. Estimating stimulated how reasonably precaution diminution she simplicity sir but.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Single Item -->
+
+                            <!-- Single Item -->
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#ac3">
+                                            What goes into a business plan?
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="ac3" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <p>
+                                            Removing welcomed civility or hastened is. Justice elderly but perhaps expense six her are another passage. Full her ten open fond walk not down.For request general express unknown are.
+                                        </p>
+                                        <p>
+                                             He in just mr door body held john down he. So journey greatly or garrets. Draw door kept do so come on open mean. Estimating stimulated how reasonably precaution diminution she simplicity sir but.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Single Item -->
+
+                            <!-- Single Item -->
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#ac4">
+                                            Where do I start? 
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="ac4" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <p>
+                                            Removing welcomed civility or hastened is. Justice elderly but perhaps expense six her are another passage. Full her ten open fond walk not down.For request general express unknown are.
+                                        </p>
+                                        <p>
+                                             He in just mr door body held john down he. So journey greatly or garrets. Draw door kept do so come on open mean. Estimating stimulated how reasonably precaution diminution she simplicity sir but.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Single Item -->
+                        </div>
+                    </div>
+                </div>
+                <!-- End Faq -->
+            </div>
+        </div>
+    </div>
+    <!-- End Why Chose Us -->
+{% endblock %}

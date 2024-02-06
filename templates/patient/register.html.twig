@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %} {% block title %}Register{% endblock %} {% block
+    body %}
+
+    <div class="container appoinment">
+        <form method="post" action="{{ path('registerPatient') }}"  class="appoinment-box">
+            <div class="heading">
+                <h4>S'inscrire</h4>
+            </div>
+            <div class="form-group">
+                <label>nom</label>
+                <input class="form-control" id="l-lname" name="nom" placeholder="nom" type="text" />
+            </div>
+            <div class="form-group">
+                <label>prenom </label>
+                <input class="form-control" id="l-lname" name="prenom" placeholder="prenom" type="text" />
+            </div>
+            <div class="form-group">
+                <label>Telephone</label>
+                <input class="form-control" id="l-lname" name="telephone" placeholder="telephone" type="telephone" />
+            </div>
+            <div classe="form-group">
+                <label>Adresse</label>
+                <input class="form-control" id="l-lname" name="adresse" placeholder="adresse" type="text"/>
+            </div>
+            <div class="form-group">
+                <label>Email </label>
+                <input class="form-control" id="l-lname" name="email" placeholder="email" type="email" />
+            </div>
+            <div class="form-group">
+                <label>Login </label>
+                <input class="form-control" id="l-lname" name="Login" placeholder="email" type="text" />
+            </div>
+            <div class="form-group">
+                <label>password </label>
+                <input class="form-control" id="l-lname" name="password" placeholder="email" type="password" />
+            </div>
+
+            <label>Sexe </label>
+
+            <select name="sexe">
+                <option value="Homme" >Homme</option>
+                <option value="Femme">Femme</option>
+            </select>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <button type="submit" >
+                        S'inscrire <i class="fa fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}

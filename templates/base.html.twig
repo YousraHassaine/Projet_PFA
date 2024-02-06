@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!
+        {% endblock %}</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="MediHub - Medical & Health Template">
+
+    <!-- ========== Page Title ========== -->
+    <title>MediHub - Medical & Health Template</title>
+
+    <link rel="shortcut icon" href="{{ asset('assets/img/favicon.png') }}" type="image/x-icon">
+    <!-- ========== Start Stylesheet ========== -->
+    <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/css/font-awesome.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/css/flaticon-set.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/css/elegant-icons.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/css/magnific-popup.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/css/owl.carousel.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/css/owl.theme.default.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/css/animate.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/css/bootsnav.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/responsive.css') }}" rel="stylesheet" />
+    <!-- ========== End Stylesheet ========== -->
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,500,600,700,800" rel="stylesheet">
+
+
+
+
+    {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+    {% block stylesheets %}
+
+    {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+
+    {% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+</head>
+
+<body>
+    {% include('partials/_preloader.html.twig') %}
+    <!-- header-start -->
+    {% include('partials/_header.html.twig') %}
+    {% block body %}
+    {% endblock %}
+
+
+
+    <!-- JS here -->
+
+
+    <!-- footer-start -->
+
+    <!-- jQuery Frameworks
+    ============================================= -->
+    <script src="{{ asset('assets/js/jquery-1.12.4.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/js/equal-height.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.appear.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.easing.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('assets/js/modernizr.custom.13711.js') }}"></script>
+    <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('assets/js/wow.min.js') }}"></script>
+    <script src="{{ asset('assets/js/isotope.pkgd.min.js') }}"></script>
+    <script src="{{ asset('assets/js/imagesloaded.pkgd.min.js') }}"></script>
+    <script src="{{ asset('assets/js/count-to.js') }}"></script>
+    <script src="{{ asset('assets/js/YTPlayer.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.nice-select.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootsnav.js') }}"></script>
+    <script src="{{ asset('assets/js/main.js') }}"></script>
+   <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+    <script>
+$(function() {
+  $('input[name="daterange"]').daterangepicker({
+    opens: 'left'
+  }, function(start, end, label) {
+    console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+  });
+});
+</script>
+
+</body>
+
+</html>

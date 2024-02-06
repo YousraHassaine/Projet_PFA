@@ -1,0 +1,90 @@
+<?php
+
+namespace App\Repository;
+
+use App\Entity\Doctor;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\Persistence\ManagerRegistry;
+
+
+/**
+ * @extends ServiceEntityRepository<Doctor>
+ *
+ * @method Doctor|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Doctor|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Doctor[]    findAll()
+ * @method Doctor[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ */
+class DoctorRepository extends ServiceEntityRepository
+{
+
+    public function __construct(ManagerRegistry $registry)
+{
+    parent::__construct($registry, Doctor::class);
+}
+    
+    public function rechercherParNomVilleSpecialite($nom, $ville)
+    {
+        $queryBuilder = $this->createQueryBuilder('u');
+
+        if ($nom) {
+            $queryBuilder->andWhere('u.Nom = :Nom')
+                ->setParameter('Nom', $nom);
+        }
+
+        if ($ville) {
+            $queryBuilder->andWhere('u.Ville = :Ville')
+                ->setParameter('Ville', $ville);
+    
+        }
+
+       /* if ($specialite) {
+            $queryBuilder->andWhere('u.Adresse = :Adresse')
+            ->setParameter('Adresse', $specialite);
+        }*/
+        return $queryBuilder->getQuery()->getResult();
+    }
+
+    public function save(Doctor $entity, bool $flush = false): void
+    {
+        $this->getEntityManager()->persist($entity);
+
+        if ($flush) {
+            $this->getEntityManager()->flush();
+        }
+    }
+
+    public function remove(Doctor $entity, bool $flush = false): void
+    {
+        $this->getEntityManager()->remove($entity);
+
+        if ($flush) {
+            $this->getEntityManager()->flush();
+        }
+    }
+    
+//    /**
+//     * @return Doctor[] Returns an array of Doctor objects
+//     */
+//    public function findByExampleField($value): array
+//    {
+//        return $this->createQueryBuilder('d')
+//            ->andWhere('d.exampleField = :val')
+//            ->setParameter('val', $value)
+//            ->orderBy('d.id', 'ASC')
+//            ->setMaxResults(10)
+//            ->getQuery()
+//            ->getResult()
+//        ;
+//    }
+
+//    public function findOneBySomeField($value): ?Doctor
+//    {
+//        return $this->createQueryBuilder('d')
+//            ->andWhere('d.exampleField = :val')
+//            ->setParameter('val', $value)
+//            ->getQuery()
+//            ->getOneOrNullResult()
+//        ;
+//    }
+}

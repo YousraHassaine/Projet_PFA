@@ -1,0 +1,7 @@
+<select name="speciality">
+    <option value="0">Choisir une Spécialité</option>
+{% for speciality in specialities %}
+    <option value='{{ speciality.id  }}'> {{ speciality.nomSpeciality}} </option>
+{% endfor %}
+</select>
+
